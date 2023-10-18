@@ -1,0 +1,22 @@
+---
+layout: default
+title: Troop 27 Manchester, Connecticut
+---
+
+{%- assign cms = strapi.collections.sites.first.strapi_attributes -%}
+
+{% include sections/about.html cms=cms %}
+
+{% include sections/features.html cms=cms %}
+
+{% include sections/portfolio.html cms=cms %}
+
+{% include sections/parallax-features.html cms=cms %}
+
+{% include sections/testimonials.html cms=cms %}
+
+{% include sections/events.html cms=cms %}
+
+{% include sections/team.html cms=cms %}
+
+{% include sections/contact.html cms=cms %}
