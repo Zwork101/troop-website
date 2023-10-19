@@ -13,13 +13,13 @@
 
       <!-- Section Header -->
       <header class="col-md-8 col-md-push-2 col-sm-12 section-header">
-        <h2>{{ site.core-title }}</h2>
+        <h2>{{ cms.traitsTitle }}</h2>
         <hr class="normal">
       </header>
 
       <!-- Section Content -->
       <div class="col-md-8 col-md-push-2 col-sm-12 section-content">
-        <p>{{ site.core-description }}</p>
+        <p>{{ cms.traitsDescription }}</p>
       </div>
 
     </div>
@@ -29,16 +29,17 @@
 
       <div class="col-md-4 col-sm-6 text-right">
 
-        {% for feature in site.core-features-left %}
+        {% assign column_size = strapi.collections.traits | size | divided_by: 2 %}
+        {% for trait in strapi.collections.traits limit: column_size %}
 
         <div class="feature">
           <div class="text-wrap">
-            <h3>{{ feature.name }}</h3>
-            <p>{{ feature.description }}</p>
+            <h3>{{ trait.strapi_attributes.Title }}</h3>
+            <p>{{ trait.strapi_attributes.Description }}</p>
           </div>
           <div class="icon-wrap">
             <div class="circle parent">
-              <i class="{{ feature.icon }} child-center"></i>
+              <i class="{{ trait.strapi_attributes.Icon }} child-center"></i>
             </div>
           </div>
         </div>
@@ -53,16 +54,16 @@
 
       <div class="col-md-4 col-sm-6 text-left">
 
-        {% for feature in site.core-features-right %}
+        {% for trait in strapi.collections.traits limit: column_size offset: continue %}
 
         <div class="feature">
           <div class="text-wrap">
-            <h3>{{ feature.name }}</h3>
-            <p>{{ feature.description }}</p>
+            <h3>{{ trait.strapi_attributes.Title }}</h3>
+            <p>{{ trait.strapi_attributes.Description }}</p>
           </div>
           <div class="icon-wrap">
             <div class="circle parent">
-              <i class="{{ feature.icon }} child-center"></i>
+              <i class="{{ trait.strapi_attributes.Icon }} child-center"></i>
             </div>
           </div>
         </div>

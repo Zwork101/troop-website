@@ -7,13 +7,13 @@
 
       <!-- Section Header -->
       <header class="col-md-8 col-md-push-2 col-sm-12 section-header">
-        <h2>{{ site.testimonials-title }}</h2>
+        <h2>{{ cms.eaglesTitle }}</h2>
         <hr class="normal">
       </header>
 
       <!-- Section Content -->
       <div class="col-md-8 col-md-push-2 col-sm-12 section-content">
-        <p>{{ site.testimonials-description }}</p>
+        <p>{{ cms.eaglesDescription }}</p>
       </div>
 
     </div>
@@ -24,7 +24,7 @@
       <!-- Testimonials Carousel -->
       <div id="testimonials-carousel" class="col-md-8 col-md-push-2">
 
-        {% for client in site.testimonials %}
+        {% for eagle in strapi.collections.eagles %}
 
         <!-- Client Testimonial -->
         <div class="client-testimonial text-center">
@@ -32,22 +32,21 @@
           <div class="testimonial-face">
 
             <div class="face">
-              <img src="{{ site.baseurl }}/images/avatars/{{ client.avatar }}" alt="Sera Avatar Image" />
+              <img src="{{ eagle.strapi_attributes.Headshot.data.attributes.formats.small | asset_url }}" alt="Sera Avatar Image" />
             </div>
 
             <div class="info">
-              <h3 class="name">{{ client.name }}</h3>
-              <a class="link" target="_blank" href="{{ client.url }}">{{ client.url-text }}</a>
+              <h3 class="name">{{ eagle.strapi_attributes.Name }}</h3>
             </div>
 
           </div>
 
           <!-- Testimonials Quote -->
           <div class="testimonial-quote">
-            <p class="quote">{{ client.cite }}</p>
-            <div class="logo">
+            <p class="quote">{{ eagle.strapi_attributes.quote }}</p>
+            <!-- <div class="logo">
               <img src="{{ site.baseurl }}/images/logos/{{ client.logo-img }}" alt="{{ client.url-text }} Logo" />
-            </div>
+            </div> -->
           </div>
         </div>
 

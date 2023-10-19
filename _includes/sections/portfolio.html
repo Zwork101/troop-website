@@ -7,13 +7,13 @@
 
       <!-- Section Header -->
       <header class="col-md-8 col-md-push-2 col-sm-12 section-header">
-        <h2>{{ site.portfolio-title }}</h2>
+        <h2>{{ cms.portfolioTitle }}</h2>
         <hr class="normal">
       </header>
 
       <!-- Section Content -->
       <div class="col-md-8 col-md-push-2 col-sm-12 section-content">
-        <p>{{ site.portfolio-description }}</p>
+        <p>{{ cms.portfolioDescription }}</p>
       </div>
 
     </div>
@@ -24,8 +24,12 @@
         <div class="filter-menu">
           <ul>
             <li data-filter="all" class="current">All</li>
-
-            {% for category in site.portfolio-categories %}
+            {% assign categories = '' | split: '' %}
+            {% for arr in strapi.collections.portfolio-items %}
+              {% assign categories = categories | concat: arr.strapi_attributes.Category %}
+            {% endfor %}
+            {% assign categories = categories | map: "Title" | uniq %}
+            {% for category in categories %}
               <li data-filter=".{{ category | replace:' ','-' | downcase }}" >{{ category }}</li>
             {% endfor %}
 
@@ -37,20 +41,21 @@
     <!-- Portfolio Grid -->
     <div class="row portfolio-grid">
 
-      {% for item in site.portfolio %}
+      {% for item in strapi.collections.portfolio-items %}
 
-      <div class="col-md-4 col-sm-6 item visible {% for category in item.categories %} {{ category | replace:' ','-' | downcase }}{% endfor %}">
+      {% assign item_categories = item.strapi_attributes.Category | map: "Title" %}
+      <div class="col-md-4 col-sm-6 item visible {% for category in item_categories %} {{ category | replace:' ','-' | downcase }}{% endfor %}">
         <figure class="img-wrap">
-          <img src="{{ site.baseurl }}/images/portfolio/{{ item.image }}" alt="Portfolio Item Image" />
+          <img src="{{ item.strapi_attributes.Image.data.attributes.formats.medium | asset_url }}" alt="Portfolio Item Image" />
         </figure>
         <div class="item-content">
-          <h3>{{ item.title }}</h3>
-          <h4>{{ item.categories | first }}</h4>
+          <h3>{{ item.strapi_attributes.Title }}</h3>
+          <h4>{{ item.strapi_attributes.Category.first.Title }}</h4>
           <div class="links">
             <ul>
-              <li><a href="{{ item.url }}" class="item-link"><i class="pe-7s-link"></i></a></li>
+              <!-- <li><a href="{{ item.url }}" class="item-link"><i class="pe-7s-link"></i></a></li> -->
               <li><a href="#" class="item-like"><i class="pe-7s-like"></i></a></li>
-              <li><a href="{{ site.baseurl }}/images/portfolio/{{ item.image }}" class="item-expand"><i class="pe-7s-exapnd2"></i></a></li>
+              <li><a href="{{ item.strapi_attributes.Image.data.attributes | asset_url }}" class="item-expand"><i class="pe-7s-exapnd2"></i></a></li>
             </ul>
           </div>
         </div>

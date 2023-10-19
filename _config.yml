@@ -54,6 +54,24 @@ strapi:
         populate: "*"
         sort: publishedAt:desc
       layout: post.html
+    fetures:
+      single_request: true
+      ouput: false
+      parameters:
+        populate: "*"
+    portfolio-items:
+      single_request: true
+      output: false
+      parameters:
+        populate: "*"
+    traits:
+      single_request: true
+      output: false
+    eagles:
+      single_request: true
+      output: false
+      parameters:
+        populate: "*"
 
 jekyll-archives:
   enabled:

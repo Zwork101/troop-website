@@ -34,7 +34,7 @@
                 <img src="{{ event.strapi_attributes.image.data.attributes.formats.medium | asset_url }}" alt="Article Blog Image">
               </div>
               <div class="article-title">
-                <h3 class="title"><a href="{{ site.baseurl }}/events/{{ event.strapi_attributes.slug }}">{{ post.title }}</a></h3>
+                <h3 class="title"><a href="{{ site.baseurl }}/events/{{ event.strapi_attributes.slug }}">{{ event.strapi_attributes.Title }}</a></h3>
                 <h4 class="category">{{ event.strapi_attributes.catagory }}</h4>
               </div>
             </header>

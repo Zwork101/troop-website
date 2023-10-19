@@ -11,10 +11,22 @@ export interface EventsTags extends Schema.Component {
   };
 }
 
+export interface PortfolioCategories extends Schema.Component {
+  collectionName: 'components_portfolio_categories';
+  info: {
+    displayName: 'Categories';
+    icon: 'archive';
+  };
+  attributes: {
+    Title: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'events.tags': EventsTags;
+      'portfolio.categories': PortfolioCategories;
     }
   }
 }

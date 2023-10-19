@@ -4,16 +4,71 @@
   "info": {
     "singularName": "site",
     "pluralName": "sites",
-    "displayName": "Site"
+    "displayName": "Site",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "aboutTitle": {
+    "websiteTitle": {
       "type": "string",
       "required": false
+    },
+    "contactTitle": {
+      "type": "string"
+    },
+    "contactDescription": {
+      "type": "richtext"
+    },
+    "eventsTitle": {
+      "type": "string"
+    },
+    "eventsDescription": {
+      "type": "richtext"
+    },
+    "featuresTitle": {
+      "type": "string"
+    },
+    "featuresDescription": {
+      "type": "richtext"
+    },
+    "traitsTitle": {
+      "type": "string"
+    },
+    "traitsDescription": {
+      "type": "richtext"
+    },
+    "portfolioTitle": {
+      "type": "string"
+    },
+    "portfolioDescription": {
+      "type": "richtext"
+    },
+    "leadersTitle": {
+      "type": "string"
+    },
+    "leadersDescription": {
+      "type": "richtext"
+    },
+    "eaglesTitle": {
+      "type": "string"
+    },
+    "eaglesDescription": {
+      "type": "richtext"
+    },
+    "aboutDescription": {
+      "type": "richtext"
+    },
+    "copyright": {
+      "type": "string"
+    },
+    "aboutTitle": {
+      "type": "string"
+    },
+    "footerDescription": {
+      "type": "richtext"
     }
   }
 }

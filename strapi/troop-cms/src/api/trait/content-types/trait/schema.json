@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "traits",
+  "info": {
+    "singularName": "trait",
+    "pluralName": "traits",
+    "displayName": "Trait"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Icon": {
+      "type": "string",
+      "regex": "pe-7s-.+?"
+    }
+  }
+}

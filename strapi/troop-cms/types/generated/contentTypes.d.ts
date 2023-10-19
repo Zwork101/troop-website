@@ -718,6 +718,38 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiEagleEagle extends Schema.CollectionType {
+  collectionName: 'eagles';
+  info: {
+    singularName: 'eagle';
+    pluralName: 'eagles';
+    displayName: 'Eagle';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    quote: Attribute.RichText;
+    Headshot: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::eagle.eagle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::eagle.eagle',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Schema.CollectionType {
   collectionName: 'events';
   info: {
@@ -758,24 +790,139 @@ export interface ApiEventEvent extends Schema.CollectionType {
   };
 }
 
+export interface ApiFetureFeture extends Schema.CollectionType {
+  collectionName: 'fetures';
+  info: {
+    singularName: 'feture';
+    pluralName: 'fetures';
+    displayName: 'Feature';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.RichText;
+    Icon: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::feture.feture',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::feture.feture',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioItemPortfolioItem extends Schema.CollectionType {
+  collectionName: 'portfolio_items';
+  info: {
+    singularName: 'portfolio-item';
+    pluralName: 'portfolio-items';
+    displayName: 'Portfolio Item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Attribute.Media;
+    Title: Attribute.String;
+    Category: Attribute.Component<'portfolio.categories', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::portfolio-item.portfolio-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::portfolio-item.portfolio-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSiteSite extends Schema.CollectionType {
   collectionName: 'sites';
   info: {
     singularName: 'site';
     pluralName: 'sites';
     displayName: 'Site';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    websiteTitle: Attribute.String;
+    contactTitle: Attribute.String;
+    contactDescription: Attribute.RichText;
+    eventsTitle: Attribute.String;
+    eventsDescription: Attribute.RichText;
+    featuresTitle: Attribute.String;
+    featuresDescription: Attribute.RichText;
+    traitsTitle: Attribute.String;
+    traitsDescription: Attribute.RichText;
+    portfolioTitle: Attribute.String;
+    portfolioDescription: Attribute.RichText;
+    leadersTitle: Attribute.String;
+    leadersDescription: Attribute.RichText;
+    eaglesTitle: Attribute.String;
+    eaglesDescription: Attribute.RichText;
+    aboutDescription: Attribute.RichText;
+    copyright: Attribute.String;
     aboutTitle: Attribute.String;
+    footerDescription: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::site.site', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::site.site', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTraitTrait extends Schema.CollectionType {
+  collectionName: 'traits';
+  info: {
+    singularName: 'trait';
+    pluralName: 'traits';
+    displayName: 'Trait';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Icon: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::trait.trait',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::trait.trait',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -829,8 +976,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::eagle.eagle': ApiEagleEagle;
       'api::event.event': ApiEventEvent;
+      'api::feture.feture': ApiFetureFeture;
+      'api::portfolio-item.portfolio-item': ApiPortfolioItemPortfolioItem;
       'api::site.site': ApiSiteSite;
+      'api::trait.trait': ApiTraitTrait;
       'api::troop-leader.troop-leader': ApiTroopLeaderTroopLeader;
     }
   }

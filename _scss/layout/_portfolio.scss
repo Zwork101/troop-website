@@ -116,6 +116,7 @@ section.portfolio-section {
         bottom: 0;
         color: $white;
         background: transparentize($primary, 0.2);
+        padding: 10px;
 
         // Animation
         transform: translateY(100%);
@@ -126,8 +127,9 @@ section.portfolio-section {
         }
 
         h3 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           margin-bottom: 10px;
+          text-align: center;
         }
 
         // Links
