@@ -48,6 +48,8 @@
       min-height: 60px;
       background: $primary;
       z-index: 99999999999999;
+      box-shadow: unset;
+      clip-path: unset;
 
       // Navigation Bar
       .navigation-bar {

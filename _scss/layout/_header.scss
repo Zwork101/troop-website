@@ -53,6 +53,9 @@ header.site-header {
     height: 100px;
     min-height: 100px;
     z-index: 2;
+    background: #0000005e;
+    box-shadow: 0 0 0 100vmax #0000005e;
+    clip-path: inset(0 -100vmax);
 
     // Logo
     .logo {
@@ -127,6 +130,7 @@ header.site-header {
     .heading-content {
       width: 100%;
       text-transform: uppercase;
+      transform: translateY(-60%);
 
       .heading-title {
         hr.small {

@@ -29,18 +29,15 @@
 
       <!-- Contact Form -->
       <div class="col-md-8 col-md-push-2">
-        <form id="sera-contact-form" action="https://formspree.io/{{ site.email }}" method="POST"
+        <form id="sera-contact-form" action="{{ site.form-endpoint }}" method="POST"
           class="contact-form container-fluid">
           <div class="col-md-6">
             <input type="text" name="name" placeholder="Name" />
           </div>
           <div class="col-md-6">
-            <input type="text" name="website" placeholder="Website" />
-          </div>
-          <div class="col-md-6">
             <input type="text" name="email" placeholder="Email" />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             <input type="text" name="subject" placeholder="Subject" />
           </div>
           <div class="col-md-12">

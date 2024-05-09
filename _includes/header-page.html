@@ -37,7 +37,7 @@
           <ul class="menu">
             <li><a href="{{ site.baseurl }}/index.html#home">Home</a></li>
             <li><a href="{{ site.baseurl }}/index.html#about">About</a></li>
-            <li><a href="{{ site.baseurl }}/index.html#features">Features</a></li>
+            <li><a href="{{ site.baseurl }}/index.html#features">Goals</a></li>
             <li><a href="{{ site.baseurl }}/index.html#portfolio">Portfolio</a></li>
             <li><a href="{{ site.baseurl }}/index.html#testimonials">Testimonials</a></li>
             <li class="current-menu-item"><a href="{{ site.baseurl }}/index.html#events">Events</a></li>
@@ -57,9 +57,9 @@
 
         <!-- Heading Title -->
         <div class="row heading-title">
-          <h2>{{ page.document.strapi_attributes.startingTime | date: "%b %d - %H:%M" }}</h2>
+          <h2>{{ page.document.strapi_attributes.startingTime | date: "%b %d - %H:%M" | default: "Troop 27" }}</h2>
           <hr class="small">
-          <h1 class="thin">{{ page.document.strapi_attributes.Title }}</h1>
+          <h1 class="thin">{{ page.document.strapi_attributes.Title | default: "Is Active" }}</h1>
         </div>
 
       </div>

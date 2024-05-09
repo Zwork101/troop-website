@@ -13,7 +13,7 @@ title: Makes a <strong>difference</strong>
       <!-- Article Header -->
       <header class="article-header">
         <div class="img-wrap">
-          <img src="" alt="Article Blog Image">
+          <img src="{{ event.strapi_attributes.image.data.attributes.formats.medium | asset_url }}" alt="Article Blog Image">
         </div>
         <div class="article-title">
           <h3 class="title"><a href="{{ site.baseurl }}/events/{{ event.strapi_attributes.slug }}">{{ event.strapi_attributes.Title }}</a></h3>

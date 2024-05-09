@@ -24,7 +24,7 @@ exclude:
 ####################################
 ######   Optional Features    ######
 ####################################
-smooth-scroll: false
+smooth-scroll: true
 
 ####################################
 ###########   Plugins    ###########
@@ -88,6 +88,8 @@ jekyll-archives:
 #######################################################
 #######################################################
 
+form-endpoint: https://submit-form.com/3tM8B0vvj
+
 # This is your site title
 title: Troop 27 - Manchester, Connecticut
 # Website language
@@ -104,12 +106,12 @@ headter-tagline: Troop 27
 # Focus Buttons
 header-focus-button:
   title: Join Today
-  url: https://themeforest.net/collections/6069390-sera
+  url: "#contact"
 
 # Secondary Buttons
 header-secondary-button:
   title: Discover More
-  url: http://themeforest.net/user/ohkimur
+  url: "#about"
 
 #
 # This is your email adress, contact from send here all emails from contact section
