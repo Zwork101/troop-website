@@ -7,13 +7,16 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "build:win": "cross-env NODE_ENV=production npm run build",
+    "start:win": "cross-env NODE_ENV=production npm start"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.14.4",
     "@strapi/plugin-users-permissions": "4.14.4",
     "@strapi/strapi": "4.14.4",
     "better-sqlite3": "8.6.0",
+    "cross-env": "^7.0.3",
     "custom-slug": "^2.1.1",
     "pg": "^8.11.3",
     "strapi-plugin-website-builder": "^3.0.0"
