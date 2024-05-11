@@ -1,4 +1,7 @@
 const config = {
+  notifications: {
+    releases: false
+  },
   locales: [
     // 'ar',
     // 'fr',
