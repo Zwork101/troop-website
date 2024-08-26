@@ -19,7 +19,7 @@
     "cross-env": "^7.0.3",
     "custom-slug": "^2.1.1",
     "pg": "^8.11.3",
-    "strapi-plugin-website-builder": "^1.0.3"
+    "strapi-plugin-website-builder": "^3.0.1"
   },
   "author": {
     "name": "A Strapi developer"
