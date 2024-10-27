@@ -996,6 +996,9 @@ export interface ApiSiteSite extends Schema.CollectionType {
     copyright: Attribute.String;
     aboutTitle: Attribute.String;
     footerDescription: Attribute.RichText;
+    calender: Attribute.Media<'files'> & Attribute.Required;
+    calenderDescription: Attribute.Text;
+    calenderTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
